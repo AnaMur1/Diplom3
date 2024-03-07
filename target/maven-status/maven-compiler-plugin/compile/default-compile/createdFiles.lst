@@ -1,0 +1,10 @@
+practicum/api/StellarBurgersApi.class
+practicum/pages/Page.class
+practicum/pages/ProfilePage.class
+practicum/constants/Paths.class
+practicum/model/UserRequest.class
+practicum/model/AuthorizationRequest.class
+practicum/pages/RegisterPage.class
+practicum/pages/MainPage.class
+practicum/pages/ForgotPasswordPage.class
+practicum/pages/LoginPage.class
