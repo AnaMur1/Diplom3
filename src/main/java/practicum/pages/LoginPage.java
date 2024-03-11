@@ -1,5 +1,6 @@
 package practicum.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,43 +20,53 @@ public class LoginPage extends Page {
     }
 
     @Override
+    @Step("Ожидание видимости элемента")
     public void waitForLoad() {
         waitForVisibility(registerLink);
     }
 
+    @Step("Клик по элементу - Зарегистрироваться")
     public void clickRegisterLink() {
         webDriver.findElement(registerLink).click();
     }
 
+    @Step("Клик по элементу - Войти")
     public void clickEnterButton() {
         webDriver.findElement(enterButton).click();
     }
 
+    @Step("Клик по элементу - Восстановить пароль")
     public void clickForgotPasswordLink() {
         webDriver.findElement(forgotPasswordLink).click();
     }
 
+    @Step("Ввод email и пароль")
     public void enterLoginData(String email, String password) {
         enterEmail(email);
         enterPassword(password);
     }
 
+    @Step("Ввод пароль")
     public void enterPassword(String password) {
         webDriver.findElement(passwordInput).sendKeys(password);
     }
 
+    @Step("Ввод email")
     public void enterEmail(String email) {
         webDriver.findElement(emailInput).sendKeys(email);
     }
 
+    @Step("Проверка видимости элемента")
     public boolean isEnterHeaderVisible() {
         return webDriver.findElement(enterHeader).isDisplayed();
     }
 
+    @Step("Клик по элементу - Конструктор")
     public void clickConstructorButton() {
         webDriver.findElement(constructorButton).click();
     }
 
+    @Step("Клик по элементу - логотип")
     public void clickLogoButton() {
         webDriver.findElement(logoButton).click();
     }

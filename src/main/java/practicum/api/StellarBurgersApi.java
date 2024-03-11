@@ -2,12 +2,11 @@ package practicum.api;
 
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
-import io.restassured.http.Header;
-import io.restassured.response.Response;
 import practicum.constants.Paths;
 import practicum.model.AuthorizationRequest;
 import practicum.model.UserRequest;
-
+import io.restassured.http.Header;
+import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
 import static org.apache.http.HttpHeaders.CONTENT_TYPE;

@@ -1,5 +1,6 @@
 package practicum;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -20,6 +21,7 @@ public class MainPageTest {
     }
 
     @Test
+    @DisplayName("Проверка кнопки - соусы")
     public void testSauceSectionButton() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -29,6 +31,7 @@ public class MainPageTest {
     }
 
     @Test
+    @DisplayName("Проверка кнопки - булки")
     public void testBunSectionButton() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -39,6 +42,7 @@ public class MainPageTest {
     }
 
     @Test
+    @DisplayName("Проверка кнопки - начинки")
     public void testFillingSectionButton() {
         mainPage.open();
         mainPage.waitForLoad();

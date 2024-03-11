@@ -1,5 +1,6 @@
 package practicum.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,50 +23,62 @@ public class MainPage extends Page {
     }
 
     @Override
+    @Step("Ожидание видимости элемента - Соберите бургер")
     public void waitForLoad() {
         waitForVisibility(createBurgerHeader);
     }
 
+    @Step("Открыть страницу")
     public void open() {
         webDriver.get(Paths.BASE_URL);
     }
 
+    @Step("Клик по элементу - Войти в аккаунт")
     public void clickEnterAccountButton() {
         webDriver.findElement(enterAccountButton).click();
     }
 
+    @Step("Клик по элементу - Личный Кабинет")
     public void clickEnterProfileLink() {
         webDriver.findElement(profileButton).click();
     }
 
+    @Step("Проверка видимости элемента - Оформить заказ")
     public boolean isOrderButtonVisible() {
         return webDriver.findElement(orderButton).isDisplayed();
     }
 
+    @Step("Проверка видимости элемента - Соберите бургер")
     public boolean isCreateOrderHeaderVisible() {
         return webDriver.findElement(createBurgerHeader).isDisplayed();
     }
 
+    @Step("Клик по элементу - Булки")
     public void clickBunButton() {
         webDriver.findElement(bunButton).click();
     }
 
+    @Step("Клик по элементу - Начинки")
     public void clickFillingButton() {
         webDriver.findElement(fillingButton).click();
     }
 
+    @Step("Клик по элементу - Соусы")
     public void clickSauceButton() {
         webDriver.findElement(sauceButton).click();
     }
 
+    @Step("Проверка на соответствие элементов")
     public boolean isSauceSectionSelected() {
         return isCorrectSectionSelected(sauceButton);
     }
 
+    @Step("Проверка на соответствие элементов")
     public boolean isBunSectionSelected() {
         return isCorrectSectionSelected(bunButton);
     }
 
+    @Step("Проверка на соответствие элементов")
     public boolean isFillingSectionSelected() {
         return isCorrectSectionSelected(fillingButton);
     }

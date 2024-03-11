@@ -1,5 +1,6 @@
 package practicum;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import practicum.api.StellarBurgersApi;
@@ -34,6 +35,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка регистрации через аккаунт")
     public void testLoginByEnterAccountButton() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -47,6 +49,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка регистрации через лк")
     public void testLoginByProfileLink() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -60,6 +63,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка регистрации")
     public void testLoginOnRegistrationPage() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -77,6 +81,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка регистрации через Восстановить пароль")
     public void testLoginOnPasswordRecoveryPage() {
         mainPage.open();
         mainPage.waitForLoad();

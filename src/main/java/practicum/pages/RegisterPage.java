@@ -1,5 +1,6 @@
 package practicum.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,36 +19,44 @@ public class RegisterPage extends Page {
     }
 
     @Override
+    @Step("Ожидание появления элемента")
     public void waitForLoad() {
         waitForVisibility(registerLabel);
     }
 
+    @Step("Создание нового аккаунта")
     public void enterNewAccountData(String name, String email, String password) {
         enterName(name);
         enterEmail(email);
         enterPassword(password);
     }
 
+    @Step("Клик по элементу - Зарегистрироваться")
     public void clickRegisterButton() {
         webDriver.findElement(registerButton).click();
     }
 
+    @Step("Ввод пароля")
     public void enterPassword(String password) {
         webDriver.findElement(passwordInput).sendKeys(password);
     }
 
+    @Step("Ввод email")
     public void enterEmail(String email) {
         webDriver.findElement(emailInput).sendKeys(email);
     }
 
+    @Step("Ввод имя")
     public void enterName(String name) {
         webDriver.findElement(nameInput).sendKeys(name);
     }
 
+    @Step("Проверка видимости элемента - Некорректный пароль")
     public boolean isIncorrectPasswordLabelVisible() {
         return webDriver.findElement(incorrectPasswordLabel).isDisplayed();
     }
 
+    @Step("Клик по элементу - Войти")
     public void clickLoginLink() {
         webDriver.findElement(enterButton).click();
     }

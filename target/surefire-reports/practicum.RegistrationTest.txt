@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: practicum.RegistrationTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.56 s - in practicum.RegistrationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.866 s - in practicum.RegistrationTest

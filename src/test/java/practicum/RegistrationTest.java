@@ -1,5 +1,6 @@
 package practicum;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import practicum.api.StellarBurgersApi;
@@ -8,7 +9,6 @@ import practicum.model.UserRequest;
 import practicum.pages.LoginPage;
 import practicum.pages.MainPage;
 import practicum.pages.RegisterPage;
-
 
 public class RegistrationTest {
 
@@ -19,6 +19,7 @@ public class RegistrationTest {
     private MainPage mainPage;
     private LoginPage loginPage;
     private RegisterPage registerPage;
+
     @Before
     public void setUp() {
         WebDriver webDriver = driverRule.getWebDriver();
@@ -28,9 +29,11 @@ public class RegistrationTest {
         registerPage = new RegisterPage(webDriver);
 
         api = new StellarBurgersApi();
-        userRequest = Utils.createRandomUser();}
+        userRequest = Utils.createRandomUser();
+    }
 
     @Test
+    @DisplayName("Проверка успешноц регистрации")
     public void testSuccessfulRegistration() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -53,6 +56,7 @@ public class RegistrationTest {
     }
 
     @Test
+    @DisplayName("Проверка регистрации с невалидным паролем")
     public void testRegistrationWithInvalidPassword() {
         api.createUser(userRequest);
         mainPage.open();

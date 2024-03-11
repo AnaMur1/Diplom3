@@ -1,5 +1,6 @@
 package practicum;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import practicum.api.StellarBurgersApi;
@@ -31,6 +32,7 @@ public class ProfilePageTest {
     }
 
     @Test
+    @DisplayName("Проверка кнопки - лк")
     public void testProfileButton() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -41,18 +43,20 @@ public class ProfilePageTest {
     }
 
     @Test
-    public void testLogoButton() {
+    @DisplayName("")
+    public void testLogoButton() throws InterruptedException {
         mainPage.open();
         mainPage.waitForLoad();
         mainPage.clickEnterProfileLink();
         loginPage.waitForLoad();
-
+        Thread.sleep(10000);
         loginPage.clickLogoButton();
         mainPage.waitForLoad();
         Assert.assertTrue("Logo button is not working", mainPage.isCreateOrderHeaderVisible());
     }
 
     @Test
+    @DisplayName("Проверка кнопки - Конструктор")
     public void testConstructorButton() {
         mainPage.open();
         mainPage.waitForLoad();
@@ -65,6 +69,7 @@ public class ProfilePageTest {
     }
 
     @Test
+    @DisplayName("Проверка кнопки - Выход")
     public void testLogoutButton() {
         mainPage.open();
         mainPage.waitForLoad();

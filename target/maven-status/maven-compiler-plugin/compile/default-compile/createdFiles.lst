@@ -1,5 +1,6 @@
 practicum/api/StellarBurgersApi.class
 practicum/pages/Page.class
+practicum/drivers/WebDriverFactory.class
 practicum/pages/ProfilePage.class
 practicum/constants/Paths.class
 practicum/model/UserRequest.class

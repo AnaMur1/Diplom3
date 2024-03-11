@@ -2,8 +2,7 @@ package practicum;
 
 import org.junit.rules.ExternalResource;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import practicum.drivers.WebDriverFactory;
 
 import java.time.Duration;
 
@@ -11,11 +10,12 @@ public class DriverRule extends ExternalResource {
 
     private WebDriver webDriver;
 
+    // Чтение передаваемого параметра browser (-Dbrowser)
+    String env = System.getProperty("browser", "chrome");
+
     @Override
     protected void before() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        webDriver = new ChromeDriver(options);
+        webDriver = WebDriverFactory.getDriver(env.toLowerCase());
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 

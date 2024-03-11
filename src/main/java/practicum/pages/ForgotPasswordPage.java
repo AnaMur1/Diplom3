@@ -1,5 +1,6 @@
 package practicum.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,10 +14,12 @@ public class ForgotPasswordPage extends Page {
     }
 
     @Override
+    @Step("Ожидание видимости элемента")
     public void waitForLoad() {
         waitForVisibility(forgotPasswordLabel);
     }
 
+    @Step("Клик по кнопке Войти")
     public void clickEnterButton() {
         webDriver.findElement(enterButton).click();
     }
